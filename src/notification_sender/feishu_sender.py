@@ -60,6 +60,8 @@ class FeishuSender:
         
         # 飞书 lark_md 支持有限，先做格式转换
         formatted_content = format_feishu_markdown(content)
+        # 飞书机器人关键字校验
+        formatted_content = "【股票分析】" + formatted_content
 
         max_bytes = self._feishu_max_bytes  # 从配置读取，默认 20000 字节
         
